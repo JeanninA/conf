@@ -4,5 +4,5 @@ return {
     version = "*",
     config = function()
         require("nvim-surround").setup({})
-    end
+    end,
 }
