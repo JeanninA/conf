@@ -8,7 +8,7 @@ return {
                 null_ls.builtins.formatting.prettier,
                 null_ls.builtins.diagnostics.eslint_d.with({
                     condition = function(utils)
-                        return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
+                        return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" })
                     end,
                 }),
             },
