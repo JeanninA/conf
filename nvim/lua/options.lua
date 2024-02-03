@@ -8,3 +8,4 @@ vim.opt.autoindent = true
 
 vim.opt.scrolloff = 8
 
+vim.opt.spell = true

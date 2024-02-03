@@ -14,6 +14,7 @@ return {
                     "html",
                     "cssls",
                     "tailwindcss",
+                    "marksman"
                 },
             })
             require("mason-tool-installer").setup({
