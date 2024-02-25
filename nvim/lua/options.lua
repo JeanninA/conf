@@ -13,3 +13,5 @@ vim.opt.spell = true
 vim.opt.spelllang = { "fr", "en" }
 
 vim.opt.swapfile = false
+
+vim.opt.fillchars = "eob: " -- remove ~ symbole on empty lines
