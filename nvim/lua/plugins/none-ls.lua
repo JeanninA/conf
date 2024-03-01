@@ -11,6 +11,9 @@ return {
                         return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" })
                     end,
                 }),
+                null_ls.builtins.diagnostics.mypy,
+                null_ls.builtins.diagnostics.ruff,
+                null_ls.builtins.formatting.black,
             },
         })
 
