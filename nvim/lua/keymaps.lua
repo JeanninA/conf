@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set({"n", "v"}, "<leader>w", "<cmd>w<CR>")
+vim.keymap.set({ "n", "v" }, "<leader>w", "<cmd>w<CR>")
 
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
@@ -17,6 +17,6 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("x", "<leader>p", '"_dP') -- paste without losing buffer
+vim.keymap.set("x", "<leader>p", '"_dP', { desc = "paste without losing buffer" })
 
 vim.keymap.set("n", "<leader>zm", ":ZenMode | SoftPencil<CR>")
