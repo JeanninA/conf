@@ -15,3 +15,5 @@ vim.opt.spelllang = { "fr", "en" }
 vim.opt.swapfile = false
 
 vim.opt.fillchars = "eob: " -- remove ~ symbole on empty lines
+
+vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
