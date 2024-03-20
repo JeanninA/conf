@@ -1,7 +1,5 @@
 vim.g.mapleader = " "
 
-vim.keymap.set({ "n" }, "<leader>s", "<cmd>w<cr>")
-
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
