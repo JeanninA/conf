@@ -21,21 +21,21 @@ return {
                 lua = { "stylua" },
                 python = { "isort", "black" },
             },
-            format_on_save = {
-                lsp_fallback = true,
-                async = false,
-                timeout_ms = 1000,
-            },
+            -- format_on_save = {
+            --     lsp_fallback = true,
+            --     async = false,
+            --     timeout_ms = 1000,
+            -- },
         })
 
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = "*",
-            callback = function(args)
-                require("conform").format({ bufnr = args.buf })
-            end,
-        })
+        -- vim.api.nvim_create_autocmd("BufWritePre", {
+        --     pattern = "*",
+        --     callback = function(args)
+        --         require("conform").format({ bufnr = args.buf })
+        --     end,
+        -- })
 
-        vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+        vim.keymap.set({ "n", "v" }, "<leader>mf", function()
             conform.format({
                 lsp_fallback = true,
                 async = false,
