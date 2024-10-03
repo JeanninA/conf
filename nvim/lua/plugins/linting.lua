@@ -15,7 +15,7 @@ return {
         local eslint = lint.linters.eslint_d
 
         eslint.args = {
-            "--no-warn-ignored",
+            -- "--no-warn-ignored",
             "--format",
             "json",
             "--stdin",
