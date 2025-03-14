@@ -24,7 +24,7 @@ return {
                     "prettier",
                     "eslint_d",
                     "mypy",
-                    "ruff",
+                    -- "ruff",
                     "black",
                     "isort",
                 },
@@ -52,12 +52,12 @@ return {
                     pyright = {
                         disableOrganizeImports = true, -- Using Ruff
                     },
-                    python = {
-                        analysis = {
-                            ignore = { "*" }, -- Using Ruff
-                            typeCheckingMode = "off", -- Using mypy
-                        },
-                    },
+                    -- python = {
+                    --     analysis = {
+                    --         ignore = { "*" }, -- Using Ruff
+                    --         typeCheckingMode = "off", -- Using mypy
+                    --     },
+                    -- },
                 },
             })
             lspconfig.cssls.setup({
