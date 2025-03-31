@@ -19,3 +19,7 @@ vim.opt.fillchars = "eob: " -- remove ~ symbole on empty lines
 vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
 vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+
+-- search settings
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
