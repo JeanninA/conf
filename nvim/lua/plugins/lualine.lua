@@ -5,7 +5,7 @@ return {
     config = function()
         require("lualine").setup({
             options = {
-                theme = "iceberg_dar",
+                theme = "auto",
             },
             sections = {
                 lualine_c = {
