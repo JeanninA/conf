@@ -23,3 +23,5 @@ vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line
 -- search settings
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+vim.opt.winborder = "rounded"
