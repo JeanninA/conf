@@ -3,7 +3,7 @@ return {
     main = "ibl",
     config = function()
         require("ibl").setup({
-            scope = { exclude = { language = { "python" } } },
+            scope = { enabled = false },
         })
     end,
 }
