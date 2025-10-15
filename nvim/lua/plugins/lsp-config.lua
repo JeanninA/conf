@@ -35,18 +35,19 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local lspconfig = require("lspconfig")
 
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.ts_ls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.html.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.pyright.setup({
+            vim.lsp.enable("lua_ls")
+            vim.lsp.enable("ts_ls")
+            vim.lsp.enable("html")
+            vim.lsp.enable("pyright")
+            vim.lsp.enable("cssls")
+            vim.lsp.enable("tailwindcss")
+            vim.lsp.enable("marksman")
+
+            vim.lsp.config("lua_ls", { capabilities = capabilities })
+            vim.lsp.config("ts_ls", { capabilities = capabilities })
+            vim.lsp.config("html", { capabilities = capabilities })
+            vim.lsp.config("pyright", {
                 capabilities = capabilities,
                 settings = {
                     pyright = {
@@ -60,15 +61,9 @@ return {
                     -- },
                 },
             })
-            lspconfig.cssls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.tailwindcss.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.marksman.setup({
-                capabilities = capabilities,
-            })
+            vim.lsp.config("cssls", { capabilities = capabilities })
+            vim.lsp.config("tailwindcss", { capabilities = capabilities })
+            vim.lsp.config("marksman", { capabilities = capabilities })
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
