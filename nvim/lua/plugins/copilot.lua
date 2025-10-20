@@ -1,31 +1,50 @@
 return {
     {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        config = function()
+            require("copilot").setup({ copilot_model = "gpt-5-copilot" })
+        end,
+    },
+    {
         "zbirenbaum/copilot-cmp",
         event = "InsertEnter",
         config = function()
             require("copilot_cmp").setup()
         end,
-        dependencies = {
-            "zbirenbaum/copilot.lua",
-            cmd = "Copilot",
-            config = function()
-                require("copilot").setup({})
-            end,
-        },
+        dependencies = { "zbirenbaum/copilot.lua" },
     },
+    -- {
+    --     "CopilotC-Nvim/CopilotChat.nvim",
+    --     dependencies = {
+    --         { "zbirenbaum/copilot.lua" },
+    --         { "nvim-lua/plenary.nvim", branch = "master" },
+    --     },
+    --     build = "make tiktoken", -- Only on MacOS or Linux
+    --     opts = {
+    --         mappings = {
+    --             reset = {
+    --                 insert = "<C-r>",
+    --                 normal = "<C-r>",
+    --             },
+    --         },
+    --     },
+    -- },
     {
-        "CopilotC-Nvim/CopilotChat.nvim",
+        "olimorris/codecompanion.nvim",
         dependencies = {
-            { "zbirenbaum/copilot.lua" },
-            { "nvim-lua/plenary.nvim", branch = "master" },
+            "nvim-lua/plenary.nvim",
         },
-        build = "make tiktoken", -- Only on MacOS or Linux
         opts = {
-            mappings = {
-                reset = {
-                    insert = "<C-r>",
-                    normal = "<C-r>",
+            strategies = {
+                chat = {
+                    adapter = "copilot",
+                    model = "gpt-5-copilot",
                 },
+            },
+            -- NOTE: The log_level is in `opts.opts`
+            opts = {
+                log_level = "DEBUG",
             },
         },
     },
