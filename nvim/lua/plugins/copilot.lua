@@ -35,17 +35,28 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
-        opts = {
-            strategies = {
-                chat = {
-                    adapter = "copilot",
-                    model = "gpt-5-copilot",
+        config = function()
+            require("codecompanion").setup({
+                strategies = {
+                    chat = {
+                        adapter = "copilot",
+                        model = "gpt-5-copilot",
+                    },
                 },
-            },
-            -- NOTE: The log_level is in `opts.opts`
-            opts = {
-                log_level = "DEBUG",
-            },
-        },
+                -- NOTE: The log_level is in `opts.opts`
+                opts = {
+                    log_level = "DEBUG",
+                },
+                display = {
+                    chat = {
+                        window = {
+                            position = "right",
+                        },
+                    },
+                },
+            })
+
+            vim.keymap.set("n", "<leader>cc", ":CodeCompanionChat<CR>", { desc = "Open Code Companion Chat" })
+        end,
     },
 }
