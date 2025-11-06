@@ -3,7 +3,7 @@ return {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         config = function()
-            require("copilot").setup({ copilot_model = "gpt-5-copilot" })
+            require("copilot").setup({ copilot_model = "claude-sonnet-4.5" })
         end,
     },
     {
@@ -14,22 +14,6 @@ return {
         end,
         dependencies = { "zbirenbaum/copilot.lua" },
     },
-    -- {
-    --     "CopilotC-Nvim/CopilotChat.nvim",
-    --     dependencies = {
-    --         { "zbirenbaum/copilot.lua" },
-    --         { "nvim-lua/plenary.nvim", branch = "master" },
-    --     },
-    --     build = "make tiktoken", -- Only on MacOS or Linux
-    --     opts = {
-    --         mappings = {
-    --             reset = {
-    --                 insert = "<C-r>",
-    --                 normal = "<C-r>",
-    --             },
-    --         },
-    --     },
-    -- },
     {
         "olimorris/codecompanion.nvim",
         dependencies = {
@@ -40,12 +24,16 @@ return {
                 strategies = {
                     chat = {
                         adapter = "copilot",
-                        model = "gpt-5-copilot",
+                        model = "claude-sonnet-4.5",
                     },
-                },
-                -- NOTE: The log_level is in `opts.opts`
-                opts = {
-                    log_level = "DEBUG",
+                    inline = {
+                        adapter = "copilot",
+                        model = "claude-sonnet-4.5",
+                    },
+                    cmd = {
+                        adapter = "copilot",
+                        model = "claude-sonnet-4.5",
+                    },
                 },
                 display = {
                     chat = {
