@@ -16,6 +16,7 @@ return {
                     "cssls",
                     "tailwindcss",
                     "marksman",
+                    "gopls",
                 },
             })
             require("mason-tool-installer").setup({
@@ -35,14 +36,6 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-            vim.lsp.enable("lua_ls")
-            vim.lsp.enable("ts_ls")
-            vim.lsp.enable("html")
-            vim.lsp.enable("pyright")
-            vim.lsp.enable("cssls")
-            vim.lsp.enable("tailwindcss")
-            vim.lsp.enable("marksman")
 
             vim.lsp.config("lua_ls", { capabilities = capabilities })
             vim.lsp.config("ts_ls", { capabilities = capabilities })
@@ -64,6 +57,7 @@ return {
             vim.lsp.config("cssls", { capabilities = capabilities })
             vim.lsp.config("tailwindcss", { capabilities = capabilities })
             vim.lsp.config("marksman", { capabilities = capabilities })
+            vim.lsp.config("gopls", { capabilities = capabilities })
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
