@@ -3,7 +3,7 @@ return {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         config = function()
-            require("copilot").setup({ copilot_model = "claude-sonnet-4.5" })
+            require("copilot").setup({})
         end,
     },
     {
@@ -24,15 +24,12 @@ return {
                 strategies = {
                     chat = {
                         adapter = "copilot",
-                        model = "claude-sonnet-4.5",
                     },
                     inline = {
                         adapter = "copilot",
-                        model = "claude-sonnet-4.5",
                     },
                     cmd = {
                         adapter = "copilot",
-                        model = "claude-sonnet-4.5",
                     },
                 },
                 display = {
