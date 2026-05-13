@@ -25,9 +25,10 @@ return {
                     "prettier",
                     "eslint_d",
                     "mypy",
-                    -- "ruff",
+                    "ruff",
                     "black",
                     "isort",
+                    "yamlfmt",
                 },
             })
         end,

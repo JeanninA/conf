@@ -14,20 +14,38 @@ return {
                 css = { "prettier" },
                 html = { "prettier" },
                 json = { "prettier" },
-                yaml = { "prettier" },
+                yaml = { "yamlfmt" },
                 markdown = { "prettier" },
                 graphql = { "prettier" },
                 liquid = { "prettier" },
                 lua = { "stylua" },
-                python = { "black", "isort" },
+                python = function(bufnr)
+                    if require("conform").get_formatter_info("ruff_format", bufnr).available then
+                        return { "ruff_format" }
+                    else
+                        return { "isort", "black" }
+                    end
+                end,
                 sql = { "sqlfmt" },
                 go = { "gofmt", "goimports" },
             },
-            format_on_save = {
-                lsp_fallback = true,
-                async = false,
-                timeout_ms = 2500,
-            },
+            format_on_save = function(bufnr)
+                local ignore_filetypes = {
+                    yaml = true,
+                    yml = true,
+                    json = true,
+                }
+
+                local ft = vim.bo[bufnr].filetype
+                if ignore_filetypes[ft] then
+                    return nil
+                end
+
+                return {
+                    timeout_ms = 500,
+                    lsp_fallback = true,
+                }
+            end,
         })
 
         vim.keymap.set({ "n", "v" }, "<leader>mf", function()
