@@ -14,34 +14,4 @@ return {
         end,
         dependencies = { "zbirenbaum/copilot.lua" },
     },
-    {
-        "olimorris/codecompanion.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        config = function()
-            require("codecompanion").setup({
-                strategies = {
-                    chat = {
-                        adapter = "copilot",
-                    },
-                    inline = {
-                        adapter = "copilot",
-                    },
-                    cmd = {
-                        adapter = "copilot",
-                    },
-                },
-                display = {
-                    chat = {
-                        window = {
-                            position = "right",
-                        },
-                    },
-                },
-            })
-
-            vim.keymap.set("n", "<leader>cc", ":CodeCompanionChat<CR>", { desc = "Open Code Companion Chat" })
-        end,
-    },
 }
