@@ -25,3 +25,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.winborder = "rounded"
+
+vim.opt.fillchars:append({
+    vert = " ",
+})
