@@ -3,7 +3,7 @@ return {
     version = "*",
     config = function()
         require("no-neck-pain").setup({
-            width = 120, -- largeur maximale de la zone de code
+            width = 180, -- largeur maximale de la zone de code
             autocmds = {
                 enableOnVimEnter = true,
             },
