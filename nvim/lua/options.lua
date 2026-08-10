@@ -29,3 +29,5 @@ vim.opt.winborder = "rounded"
 vim.opt.fillchars:append({
     vert = " ",
 })
+
+vim.treesitter.language.register("bash", "env")

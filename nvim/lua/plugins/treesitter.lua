@@ -20,6 +20,7 @@ return {
             "go",
             "rust",
             "markdown",
+            "bash",
         })
         vim.api.nvim_create_autocmd("FileType", {
             pattern = {
@@ -37,6 +38,8 @@ return {
                 "go",
                 "rust",
                 "markdown",
+                "sh",
+                "env",
             },
             callback = function()
                 -- syntax highlighting, provided by Neovim
