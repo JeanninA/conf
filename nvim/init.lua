@@ -13,4 +13,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require("options")
 require("keymaps")
+require("macro-turbo")
 require("lazy").setup("plugins")
