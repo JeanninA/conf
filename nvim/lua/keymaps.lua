@@ -18,4 +18,3 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "paste without losing buffer" })
 
 vim.keymap.set("x", "<leader>m", ":MacroTurbo<CR>", { desc = "Run macro @q over selection (fast)" })
-vim.keymap.set("n", "<leader>zm", ":ZenMode | SoftPencil<CR>")
